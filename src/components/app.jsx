@@ -1,31 +1,16 @@
 import React from "react";
 import Card from "./Card.jsx"
-import { useState, useEffect, useRef } from "react";
-const DACHSHUND_ENDPOINT_RANDOM_PHOTOS = "https://dog.ceo/api/breed/dachshund/images/random/12"
+import { useRef } from "react";
+import useDachshund from "../hooks/useDachshund.jsx";
 
 export default function App() {
-    let [dachshunds, setDachshunds] = useState();
     const ref = useRef(null);
-
-    const getDachshunds = () => {
-        fetch(DACHSHUND_ENDPOINT_RANDOM_PHOTOS )
-        .then((res) => res.json())
-        .then(data => {
-            const { message: dachshundImages } = data
-    
-            setDachshunds(dachshundImages)
-        });
-    }
+    let {dachshunds, refreshDachshunds} = useDachshund()
 
     const handleClick = () => {
-        getDachshunds()
+        refreshDachshunds()
         ref.current?.scrollIntoView({behavior: 'smooth'});
     }
-    
-    useEffect(() =>{
-        getDachshunds()
-    },[])
-
 
     return(
     <main>
