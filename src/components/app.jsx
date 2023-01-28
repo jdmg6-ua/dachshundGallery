@@ -26,6 +26,7 @@ export default function App() {
                         >
                             <h1
                                 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight"
+                                ref={ref}
                             >
                                 La mejor colección de perros <b>Salchicha</b> del mundo.
                             </h1>
@@ -33,7 +34,6 @@ export default function App() {
                     </div>
                 </div>
             </section>
-            <div className="h-[10vh]" ref={ref}></div>
             <div className="container m-auto px-5">
                 {
                     dachshunds && (
