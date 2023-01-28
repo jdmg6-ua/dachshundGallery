@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./Card.jsx"
 import { useRef } from "react";
 import useDachshund from "../hooks/useDachshund.jsx";
 
@@ -39,7 +38,11 @@ export default function App() {
                     dachshunds && (
                         <div className="grid gap-8 grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3">
                             {dachshunds.map((dachshund, index) => (
-                                <Card key={index} url={dachshund} />
+                                <div
+                                    key={index}
+                                    class="shadow-lg rounded-lg bg-white overflow-hidden h-[400px] md:h-[300px] lg:h-[400] bg-center bg-cover bg-no-repeat hover:scale-105 hover:rotate-2 transition-all ease-in-out"
+                                    style={{ backgroundImage: `url(${dachshund})` }}
+                                />
                             ))}
                         </div>
                     )
