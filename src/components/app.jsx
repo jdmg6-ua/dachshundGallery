@@ -15,7 +15,7 @@ export default function App() {
         <main>
             <section className="mb-2">
                 <div
-                    className="relative overflow-hidden bg-no-repeat bg-cover h-[500px] md:h-[700px] bg-[url('/waves.svg')] bg-center"
+                    className="relative overflow-hidden bg-no-repeat bg-cover h-[500px] md:h-[700px] bg-[url('/dachshund/waves.svg')] bg-center"
                 >
                     <div
                         className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
